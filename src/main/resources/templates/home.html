@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+<title>Home page</title>
+<style>
+body{
+    margin: 0;
+     background: url('navbar.jpg') center/cover no-repeat fixed; 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+
+/* .home-container{
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) , rgba(0,0,0,0.3)), url('navbar.jpg') center/cover no-repeat fixed;
+} */
+.login-link
+{
+    margin-left: auto;
+}
+.login-link a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+.login-link a:hover{
+    color: #ecf0f1;
+}
+.home-container{
+            text-align: center;
+            padding: 20px;
+            
+        }
+        .home-container h2{
+            color: #ffffff;
+            font-weight: bolder;
+            margin-top: 80px;
+        }
+
+        .home-container h6{
+            font-style: italic;
+            color: #ffffff;
+            padding-top: 60px;
+            font-weight: 300;
+            font-weight: bold;
+        }
+        .home-container p{
+            color: aliceblue;
+            display: flex;
+            margin: 0;
+            min-height: 43vh;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-top: 3px;
+            text-align: left;
+            font-weight: bold;
+            padding: 80px;
+        }
+        section{
+            margin-bottom: 1000px;
+            padding: 20px;
+            border-radius: 5px;
+            flex-grow: 1;
+        }
+        #contact{
+            margin-bottom: 0;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            /* position: fixed;
+            bottom: 0;
+            margin-top: auto;
+            width: 100%;
+            box-sizing: border-box; */
+        }
+        h1{
+            color: #333;
+        }
+
+        #starterBtn{
+            padding-top: 0px;
+            text-decoration: none;
+            padding: 10px;
+            color: #ffffff;
+        }
+        
+        .btn{
+            outline: 0px;
+            border-radius: 0;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: large;
+            background-color: black;
+        }
+
+        .box-container{
+            padding: 30px;
+            /* background-color: black; */
+            color: #ffffff;
+            margin: 30px;
+        }
+</style>
+</head>
+<body> 
+
+	<!-- Navbar -->
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">EMP System</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="home1">Home
+						<span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item active"><a class="nav-link" href="addemp">Add EMP</a></li>
+				<li class="nav-item active"><a class="nav-link" href="/page">List</a></li>
+				<li class="nav-item active"><a class="nav-link" href="#about">About</a></li>
+				<li class="nav-item active"><a class="nav-link" href="#contact">Contact</a></li>
+				<li><a style="text-decoration:none;" href="signup"><button style="margin-left:750px; margin-top:10px; border:0; background-color:#ffffff; color:black;" >Logout</button></a></li>		
+
+			</ul>
+		</div>
+	</nav>
+ <div class="home-container">
+        <h2>Workforce Hub</h2>
+        <h6><em>Elevate Your WorkForce: Streamlined Solutions for Seamless Employee Management.</em></h6>
+        <p>
+            It s a Comprehensive Employee Management System provides an efficient way to manage employee information,
+            track work performance, and streamlineHR processes. Whether you are a small business or a 
+            large enterprise, our system is designed to meet your organizational needs.
+        </p>
+
+<!--         <button class="btn"><a href="signup.html" id="starterBtn" type="button">Getting Started></a></button>
+ -->    </div>
+ <div id="about">
+  <div class="box-container">
+            <div class="box">
+                <h1 style="color: #ffffff; font-weight: bolder;">About Us</h1>
+                <p>
+                
+                    <h4>Our Mission</h4>
+                    <br>
+At WorkforceHub, we are driven by a singular mission – to redefine the landscape of employee management. Our goal is to provide organizations with a comprehensive and intuitive solution that empowers them to streamline HR processes, foster employee growth, and elevate workplace efficiency.
+<br><br>
+<h4>Who We Are</h4>
+<br>
+WorkforceHub is more than just a software solution; we are a dedicated team of professionals passionate about transforming the way businesses interact with their workforce. Our team brings together a blend of technical expertise and HR insights to create a platform that meets the evolving needs of modern organizations.
+<br><br>
+<h4>What Sets WorkforceHub Apart</h4> 
+<br>
+- Innovation: We pride ourselves on leveraging the latest technologies to infuse innovation into every aspect of employee management.
+<br>
+- User-Centric Design: WorkforceHub is crafted with a user-centric approach, ensuring a seamless experience for administrators and employees alike.
+<br>
+- Scalability: Whether you're a startup or a large enterprise, WorkforceHub scales with your organization, providing flexibility as you grow.
+<br>
+- Continuous Enhancement: WorkforceHub is a dynamic platform that evolves with industry trends. Regular updates and enhancements are part of our commitment to delivering excellence.
+<br><br>
+<h4>Our Vision</h4>
+
+Our vision is to be the cornerstone of workforce management, offering a hub where businesses can efficiently navigate HR intricacies. We foresee a future where WorkforceHub becomes synonymous with streamlined processes, engaged employees, and organizational success.
+
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div id="contact">
+     <div class="box-container">
+        <div class="box">
+            <h1 style="color: #ffffff; font-weight: bolder; text-align: center;">Contact Us</h1>
+            <p>
+            
+                <p style="text-align: center;">
+                    For inquiries or assistance, please feel free to contact]
+                    Email: info@example.com <br>
+                    Phone: +1 (123)456-7890
+                </p>
+            </p>
+        </div>
+        </div>
+    </div>
+</div>
+	<!-- Navbar -->
+
+	
+<!-- 
+	<div class="container">
+
+		<p>Total Emp: [[${totalItem}]]</p>
+
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li th:if="${currentPage !=0}" class="page-item"><a class="page-link" th:href="@{'/page/'+${currentPage-1}}">Previous</a></li>
+
+
+				<li th:each="i:${#numbers.sequence(1,totalPages)}"  th:classappend="${currentPage==i-1 ? 'active' : '' }"  class="page-item">
+				
+				<a class="page-link" th:href="@{'/page/'+${i-1}}">[[${i}]]</a>
+				
+				
+				</li>
+
+				<li th:if="${currentPage+1!=totalPages}" class="page-item"><a class="page-link" th:href="@{'/page/'+${currentPage+1}}">Next</a></li>
+			</ul>
+		</nav>
+	</div>
+
+
+ -->
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</body>
+</html>
