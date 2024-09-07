@@ -6,13 +6,13 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.2</version>
-		<packaging>war</packaging>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>Workforce</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Workforce</name>
+		<packaging>war</packaging>
 	<description>Backend Code For Employee Portal</description>
 	<dependencies>
 		<dependency>
