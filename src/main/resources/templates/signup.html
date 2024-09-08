@@ -52,7 +52,7 @@ h2{
 <div class="login-container">
     <h2>Signup</h2>
 
-    <form action="/signup" method="post">
+    <form th:action="@{/signup}" method="post">
     <div class="input-group">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
@@ -63,7 +63,7 @@ h2{
 </div>
         <button type="submit">Signup</button>
     </form>
-	 <p>Already have an account? <a href="/login">Login</a> 
+	 <p>Already have an account? <a th:href="@{/login}">Login</a> 
 	 </div>
 </body>
 
