@@ -25,6 +25,7 @@ import com.example.service.EmpService;
 public class EmpController {
 	@Autowired
 	private EmpService service;
+	private int setlog=0;
 
 	@GetMapping(value={"/","/home"})
 	public String home() {
@@ -32,7 +33,14 @@ public class EmpController {
 	}
 	@GetMapping("/home1")
 	public String home2(Model m) {
-		return "home";
+		if(setlog==1)
+		{
+			return "home";
+		}
+		else
+		{
+			return "redirect:/login";
+		}
 	}
 	
 	@GetMapping("/addemp")
@@ -50,9 +58,16 @@ public class EmpController {
 
 	@GetMapping("/edit/{id}")
 	public String edit(@PathVariable int id, Model m) {
+		if(setlog==1)
+		{
 		Employee e = service.getEMpById(id);
 		m.addAttribute("emp", e);
 		return "edit";
+		}
+		else
+		{
+			return "redirect:/login";
+		}
 	}
 
 	@PostMapping("/update")
@@ -74,6 +89,8 @@ public class EmpController {
 
 	@RequestMapping("/page")
 	public String findPaginated( Model m) {
+		if(service==1)
+		{
 		List<Employee> employeeList=service.getAllEmp();
 		m.addAttribute("emp",employeeList);
 		/*
@@ -83,6 +100,10 @@ public class EmpController {
 		 * m.addAttribute("totalItem", emplist.getTotalElements());
 		 */
 		return "index";
+		}
+		{
+			return "redirect:/login";
+		}
 	}
 	
 	@Autowired
@@ -91,6 +112,7 @@ public class EmpController {
 	//private PasswordEncoder passwordEncoder;
 	@GetMapping("/signup")
 	public String showSignupForm(Model m) {
+		setlog=0;
 		return "signup";
 	}
 	@PostMapping("/signup")
@@ -117,6 +139,7 @@ public class EmpController {
 			System.out.println(u.getUsername()+" "+u.getPassword());
 			if(password.equals(u.getPassword()))
 			{
+				setlog=1;
 				return "redirect:/home1";
 			}
 			else
