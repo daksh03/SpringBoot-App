@@ -1,8 +1,8 @@
 package com.example.controller;
-import javax.servlet.http.HttpSession;
+//import javax.servlet.http.HttpSession;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
+//import org.springframework.data.domain.Page;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -89,7 +89,7 @@ public class EmpController {
 
 	@RequestMapping("/page")
 	public String findPaginated( Model m) {
-		if(service==1)
+		if(setlog==1)
 		{
 		List<Employee> employeeList=service.getAllEmp();
 		m.addAttribute("emp",employeeList);
