@@ -52,9 +52,8 @@ public class EmpControllerTest {
 
    @Test
 void testRegister() throws Exception {
-    
     mockMvc.perform(post("/register") 
-                    .contentType(MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+                    // .contentType(MediaType.APPLICATION_FORM_URLENCODED_VALUE)
                     .param("id", "123") 
                     .param("name", "Daksh")
                     .param("address", "Choudhary Puram")
