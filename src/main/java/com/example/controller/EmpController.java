@@ -25,8 +25,8 @@ import com.example.service.EmpService;
 public class EmpController {
 	@Autowired
 	private EmpService service;
-	private int setlog=0;
-
+	public int setlog=0;
+	
 	@GetMapping(value={"/","/home"})
 	public String home() {
 		return "redirect:/login";
