@@ -1,8 +1,12 @@
-**SpringBoot-Application**
+# SpringBoot-Application
 
-# Learnings
+The **@SpringBootApplication** annotation combines three annotations. Those three annotations are: @Configuration, @EnableAutoConfiguration, and @ComponentScan .
 
-@PathVariable and @RequestParam are annotations in Spring Framework used to extract values from HTTP requests and pass them into controller methods. While they serve similar purposes, they are used in different scenarios.
+- `@AutoConfiguration` : This annotation automatically configuring beans in the class path and automatically scans the dependencies according to the application need.
+- `@ComponentScan` : This annotation scans the components (@Component, @Service, etc.) in the package of annotated class and its sub-packages.
+- `@Configuration` : This annotation configures the beans and packages in the class path.
+
+**@PathVariable** and **@RequestParam** are annotations in Spring Framework used to extract values from HTTP requests and pass them into controller methods. While they serve similar purposes, they are used in different scenarios.
 
 @PathVariable
 This annotation is used to extract values from the URI (path). It maps a variable in the URI to a method parameter.
