@@ -6,6 +6,16 @@ The **@SpringBootApplication** annotation combines three annotations. Those thre
 - `@ComponentScan` : This annotation scans the components (@Component, @Service, etc.) in the package of annotated class and its sub-packages.
 - `@Configuration` : This annotation configures the beans and packages in the class path.
 
+## Features of Spring Boot:
+
+- `Auto-configuration` - Spring Boot automatically configures dependencies by using @EnableAutoconfiguration annotation and reduces boilerplate code.
+- `Spring Boot Starter POM` - These Starter POMs are pre-configured dependencies for functions like database, security, maven configuration etc.
+` `Spring Boot CLI` (Command Line Interface) - This command line tool is generally for managing dependencies, creating projects and running the applications.
+- `Actuator` - Spring Boot Actuator provides health check, metrics and monitors the endpoints of the application. It also simplifies the troubleshooting management.
+- `Embedded Servers` - Spring Boot contains embedded servers like Tomcat and Jetty for quick application run. No need of external servers.
+
+---
+
 **@PathVariable** and **@RequestParam** are annotations in Spring Framework used to extract values from HTTP requests and pass them into controller methods. While they serve similar purposes, they are used in different scenarios.
 
 @PathVariable
