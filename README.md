@@ -66,3 +66,15 @@ Flexibility:
 Both can technically achieve similar results, but @PathVariable is cleaner and more expressive for resource identification.
 
 @RequestParam provides flexibility in handling optional parameters, defaults, or multiple filters.
+
+## Basic Spring Boot Annotations
+
+- `@SpringBootApplication`: This is the main annotation used to bootstrap a Spring Boot application. It combines three annotations: **@Configuration** , **@EnableAutoConfiguration** , and **@ComponentScan** . It is typically placed on the main class of the application.
+
+- `@Configuration`: This annotation is used to indicate that a class contains configuration methods for the application context. It is typically used in combination with **@Bean** annotations to define beans and their dependencies.
+
+- `@Component`: This annotation is the most generic annotation for any Spring-managed component. It is used to mark a class as a Spring bean that will be managed by the Spring container.
+
+- `@RestController`: This annotation is used to define a RESTful web service controller. It is a specialized version of the **@Controller** annotation that includes the **@ResponseBody** annotation by default.
+  
+- `@RequestMapping`: This annotation is used to map HTTP requests to a specific method in a controller. It can be applied at the class level to define a base URL for all methods in the class, or at the method level to specify a specific URL mapping.
