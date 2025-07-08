@@ -78,3 +78,10 @@ Both can technically achieve similar results, but @PathVariable is cleaner and m
 - `@RestController`: This annotation is used to define a RESTful web service controller. It is a specialized version of the **@Controller** annotation that includes the **@ResponseBody** annotation by default.
   
 - `@RequestMapping`: This annotation is used to map HTTP requests to a specific method in a controller. It can be applied at the class level to define a base URL for all methods in the class, or at the method level to specify a specific URL mapping.
+
+##  Disable a specific auto-configuration class?
+To disable a specific auto-configuration class in a Spring Boot application, we can use the **@EnableAutoConfiguration** annotation with the " exclude" attribute.
+
+```
+@EnableAutoConfiguration(exclude = {//classname})
+```
