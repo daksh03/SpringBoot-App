@@ -85,3 +85,7 @@ To disable a specific auto-configuration class in a Spring Boot application, we 
 ```
 @EnableAutoConfiguration(exclude = {//classname})
 ```
+
+##  Flow of HTTPS requests through the Spring Boot application.
+
+![image](https://github.com/user-attachments/assets/0b5c9f52-f45e-4df9-a970-990fb82e3437)
