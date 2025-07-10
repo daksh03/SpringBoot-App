@@ -89,3 +89,12 @@ To disable a specific auto-configuration class in a Spring Boot application, we 
 ##  Flow of HTTPS requests through the Spring Boot application.
 
 ![image](https://github.com/user-attachments/assets/0b5c9f52-f45e-4df9-a970-990fb82e3437)
+
+# Difference between @Controller and @RestController
+
+| Feature                         | @Controller                                                        | @RestController                                              |
+|---------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------|
+| Definition / Usage              | Marks a class as a Spring MVC controller (returns views/templates) | Combines `@Controller` + `@ResponseBody` (returns data directly) |
+| Application                     | Traditional web applications with server-side rendered views       | RESTful APIs returning JSON/XML                              |
+| Request Mapping & Handling      | Use `@RequestMapping` (or its variants) to map URLs to handler methods; handlers typically return view names | Use `@RequestMapping` (and HTTP-specific shortcuts) to map URLs to handler methods; return values are written directly to the response body |
+
