@@ -98,3 +98,14 @@ To disable a specific auto-configuration class in a Spring Boot application, we 
 | Application                     | Traditional web applications with server-side rendered views       | RESTful APIs returning JSON/XML                              |
 | Request Mapping & Handling      | Use `@RequestMapping` (or its variants) to map URLs to handler methods; handlers typically return view names | Use `@RequestMapping` (and HTTP-specific shortcuts) to map URLs to handler methods; return values are written directly to the response body |
 
+# Dependency Injection and Its Types
+
+Dependency Injection (DI) is a design pattern that enables loosely coupled components. In DI, an object’s ability to complete a task depends on another object.
+
+## Types of Dependency Injection
+
+| Type                  | Description                                                                                       |
+|-----------------------|---------------------------------------------------------------------------------------------------|
+| Constructor Injection | The dependency is provided through the dependent class’s constructor. This is the most common DI type in Spring Boot. |
+| Setter Injection      | The dependency is provided through a setter method on the dependent class after instantiation.   |
+| Field Injection       | The dependency is injected directly into a class field (usually via reflection, e.g. `@Autowired`). |
