@@ -109,3 +109,12 @@ Dependency Injection (DI) is a design pattern that enables loosely coupled compo
 | Constructor Injection | The dependency is provided through the dependent class’s constructor. This is the most common DI type in Spring Boot. |
 | Setter Injection      | The dependency is provided through a setter method on the dependent class after instantiation.   |
 | Field Injection       | The dependency is injected directly into a class field (usually via reflection, e.g. `@Autowired`). |
+
+# Difference between Constructor Injection and Setter Injection
+
+| Feature               | Constructor Injection                                               | Setter Injection                                                            |
+|-----------------------|---------------------------------------------------------------------|------------------------------------------------------------------------------|
+| Dependency            | Dependencies are provided through constructor parameters.          | Dependencies are set through setter methods after object creation.          |
+| Immutability          | Promotes immutability as dependencies are set at creation.         | Dependencies can be changed dynamically after object creation.              |
+| Dependency Overriding | Harder to override dependencies with different implementations.    | Allows easier overriding of dependencies using different setter values.     |
+
