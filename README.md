@@ -118,3 +118,12 @@ Dependency Injection (DI) is a design pattern that enables loosely coupled compo
 | Immutability          | Promotes immutability as dependencies are set at creation.         | Dependencies can be changed dynamically after object creation.              |
 | Dependency Overriding | Harder to override dependencies with different implementations.    | Allows easier overriding of dependencies using different setter values.     |
 
+# Differences between JPA and Hibernate
+
+| Feature                     | JPA                                                                    | Hibernate                                                         |
+|-----------------------------|------------------------------------------------------------------------|-------------------------------------------------------------------|
+| Package                     | javax.persistence                                                      | org.hibernate                                                     |
+| Role                        | Java specification for handling relational data in Java applications   | Object-Relational Mapping (ORM) tool for persisting Java objects  |
+| Nature                      | Standard API (only a specification, no implementation)                 | Concrete implementation of the JPA specification                  |
+| Database Operations & Mapping | Defines CRUD operations and mapping Java data types to SQL tables     | Provides advanced mapping, caching and direct DB access beyond JPA |
+| Query Language              | Java Persistence Query Language (JPQL)                                 | Hibernate Query Language (HQL)                                    |
