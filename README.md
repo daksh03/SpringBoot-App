@@ -127,3 +127,43 @@ Dependency Injection (DI) is a design pattern that enables loosely coupled compo
 | Nature                      | Standard API (only a specification, no implementation)                 | Concrete implementation of the JPA specification                  |
 | Database Operations & Mapping | Defines CRUD operations and mapping Java data types to SQL tables     | Provides advanced mapping, caching and direct DB access beyond JPA |
 | Query Language              | Java Persistence Query Language (JPQL)                                 | Hibernate Query Language (HQL)                                    |
+
+## 🚀 Spring Boot Caching Overview
+
+Spring Boot simplifies caching with powerful annotations that handle common caching tasks declaratively.
+
+---
+
+### 🔧 Caching Annotations in Spring Boot
+
+| Annotation     | Purpose                                                                 |
+|----------------|-------------------------------------------------------------------------|
+| `@Cacheable`   | Caches the result of a method. If the method is called with the same parameters, the cached result is returned instead of executing the method again. |
+| `@CachePut`    | Updates the cache with the method’s result, even if the result already exists in the cache. |
+| `@CacheEvict`  | Removes data from the cache. It can be used for clearing caches after an update or delete operation. |
+
+---
+
+```java
+@Cacheable("users")
+public User getUserById(Long userId) {
+    System.out.println("Fetching user from database...");
+    return userRepository.findById(userId).orElse(null);
+}
+```
+
+```java
+@CachePut(value = "users", key = "#user.id")
+public User updateUser(User user) {
+    System.out.println("Updating user and refreshing cache...");
+    return userRepository.save(user);
+}
+```
+
+```java
+@CacheEvict(value = "users", key = "#userId")
+public void deleteUser(Long userId) {
+    System.out.println("Deleting user from database and clearing cache...");
+    userRepository.deleteById(userId);
+}
+```
