@@ -167,3 +167,41 @@ public void deleteUser(Long userId) {
     userRepository.deleteById(userId);
 }
 ```
+# Spring Dependency Injection vs Direct Instantiation
+
+This README explains when to use Spring’s `@Autowired` annotation for dependency injection and when to create objects directly with `new`. It covers common scenarios, code samples, key differences, and best practices.
+
+---
+
+## Overview
+
+Spring can manage object lifecycles, scopes, and cross-cutting concerns like transactions and AOP.  
+Using `@Autowired` lets you delegate wiring to the framework, while direct instantiation gives you full control over creation.
+
+---
+
+## When to Use `@Autowired`
+
+- Inject service, repository, or component beans declared in the Spring context  
+- Rely on lifecycle features (singleton, prototype scopes) managed by Spring  
+- Apply aspects (transactions, security, caching) transparently  
+- Facilitate unit testing by swapping implementations via configuration
+
+---
+
+## When to Instantiate Directly
+
+- Work with simple value objects, DTOs, or helpers without external dependencies  
+- Need fresh instances outside Spring’s lifecycle or custom scopes  
+- Bypass Spring in isolated unit tests to exercise classes without loading the context  
+- Create utility classes or objects where framework coupling is unnecessary
+
+---
+
+| Aspect                         | @Autowired (Spring-Managed) | Direct Instantiation  |
+|--------------------------------|-----------------------------|-----------------------|
+| Lifecycle management           | yes                         | no                    |
+| Scope control                  | yes                         | no                    |
+| Proxying (AOP, transactions)   | transparent                 | not available         |
+| Test swapping                  | via context or mocks        | manual                |
+| Coupling to framework          | higher                      | lower                 |
