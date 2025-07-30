@@ -205,3 +205,19 @@ Using `@Autowired` lets you delegate wiring to the framework, while direct insta
 | Proxying (AOP, transactions)   | transparent                 | not available         |
 | Test swapping                  | via context or mocks        | manual                |
 | Coupling to framework          | higher                      | lower                 |
+
+---
+
+## Simple Email Template Engine Comparison
+
+| Aspect                       | Mustache                                  | FreeMarker                                              | Thymeleaf                                                   |
+|------------------------------|-------------------------------------------|---------------------------------------------------------|-------------------------------------------------------------|
+| Starter Dependency           | spring-boot-starter-mustache              | spring-boot-starter-freemarker                          | spring-boot-starter-thymeleaf                               |
+| Template File Extension      | .html (with {{…}} placeholders)           | .ftl (with ${…}, <#if>, <#list>, macros)                | .html (with th:*)                                           |
+| Logic Support                | None (logic-less)                         | Conditionals, loops, macros, custom directives          | Conditionals, loops, fragments, expression utility objects |
+| Natural HTML Preview         | Fully previewable (placeholders ignored)  | Previewable but raw FTL tags visible                    | Fully previewable (th:* attributes removed at render time)  |
+| Internationalization (i18n)  | Via custom helpers                       | Via ResourceBundle + directives                         | Native MessageSource integration                            |
+| Layout & Fragments           | Not supported                            | include/import directives                               | Powerful fragment/layout dialect                            |
+| Learning Curve               | Very low                                 | Moderate                                                | Moderate                                                    |
+| Performance                  | Lightweight & fast                       | High-performance on complex templates                   | Optimized for Spring, good caching                         |
+| Typical Use Case             | Very simple emails without logic         | Emails needing loops or conditional blocks              | Rich HTML emails with fragments, inline images, styles      |
