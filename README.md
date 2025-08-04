@@ -221,3 +221,5 @@ Using `@Autowired` lets you delegate wiring to the framework, while direct insta
 | Learning Curve               | Very low                                 | Moderate                                                | Moderate                                                    |
 | Performance                  | Lightweight & fast                       | High-performance on complex templates                   | Optimized for Spring, good caching                         |
 | Typical Use Case             | Very simple emails without logic         | Emails needing loops or conditional blocks              | Rich HTML emails with fragments, inline images, styles      |
+
+Will Implement EMail Service while editing employeed details
