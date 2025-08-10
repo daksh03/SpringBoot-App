@@ -11,9 +11,11 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.flash;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -35,6 +37,9 @@ public class EmpControllerTest {
 
     @MockBean
     private  UserRepository userRepository;
+
+    @MockBean
+    private EmpController empController;
 
     @Test
     void testHome() throws Exception {
@@ -65,6 +70,33 @@ void testRegister() throws Exception {
             .andExpect(redirectedUrl("/page"));
 
     verify(empService, times(1)).addEmp(any(Employee.class));
+}
+
+@Test
+void testEdit() throws Exception {
+    mockMvc.perform(get("/edit/1"))
+        .andExpect(status().is3xxRedirection())
+        .andExpect(redirectedUrl("/login"));
+}
+
+@Test
+void testEdit1() throws Exception {
+    empController.setlog = 1;
+    Employee employee = new Employee();
+    employee.setId(1);
+    employee.setName("daksh");
+    employee.setAddress("Choudhary Puram");
+    employee.setEmail("Daksh@gmail.com");
+    employee.setPhno("9876543210");
+    employee.setSalary(246000);
+
+    when(empService.getEMpById(1)).thenReturn(employee);
+
+    mockMvc.perform(get("/edit/1"))
+           .andExpect(status().isOk())
+           .andExpect(view().name("edit"))
+           .andExpect(model().attributeExists("emp"))
+           .andExpect(model().attribute("emp", employee));
 }
     
 }

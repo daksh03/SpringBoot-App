@@ -25,7 +25,8 @@ import com.example.service.EmpService;
 public class EmpController {
 	@Autowired
 	private EmpService service;
-	private int setlog=0;
+
+	public int setlog=0;
 
 	@GetMapping(value={"/","/home"})
 	public String home() {
@@ -50,7 +51,8 @@ public class EmpController {
 
 	@PostMapping("/register")
 	public String empRegister(@ModelAttribute Employee e,RedirectAttributes redirectAttributes) {//, HttpSession session) {
-		service.addEmp(e);
+		String action = "register";
+		service.addEmp(e, action);
 		//session.setAttribute("msg", "Emplyoee Added Sucessfully..");
 		redirectAttributes.addFlashAttribute("msg", "Emp Data Update Sucessfully..");	
 		return "redirect:/page";
@@ -72,7 +74,8 @@ public class EmpController {
 
 	@PostMapping("/update")
 	public String updateEmp(@ModelAttribute Employee e,Model m) {//, HttpSession session) {
-		service.addEmp(e);
+		String action = "Update";
+		service.addEmp(e, action);
 		//session.setAttribute("msg", "Emp Data Update Sucessfully..");
 		m.addAttribute("msg", "Emp Data Update Sucessfully..");
 		return "redirect:/page";
