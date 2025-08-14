@@ -50,7 +50,6 @@ public class EmpController {
 	public String empRegister(@ModelAttribute Employee e,RedirectAttributes redirectAttributes) {//, HttpSession session) {
 		String action = "register";
 		service.addEmp(e, action);
-		//session.setAttribute("msg", "Emplyoee Added Sucessfully..");
 		redirectAttributes.addFlashAttribute("msg", "Emp Data Update Sucessfully..");	
 		return "redirect:/page";
 	}
@@ -70,19 +69,18 @@ public class EmpController {
 	}
 
 	@PostMapping("/update")
-	public String updateEmp(@ModelAttribute Employee e,Model m) {//, HttpSession session) {
+	public String updateEmp(@ModelAttribute Employee e,Model m) {
 		String action = "Update";
 		service.addEmp(e, action);
-		//session.setAttribute("msg", "Emp Data Update Sucessfully..");
 		m.addAttribute("msg", "Emp Data Update Sucessfully..");
 		return "redirect:/page";
 	}
 
 	@GetMapping("/delete/{id}")
-	public String deleteEMp(@PathVariable int id,Model m) {//, HttpSession session) {
-
-		service.deleteEMp(id);
-		//session.setAttribute("msg", "Emp Data Delete Sucessfully..");
+	public String deleteEMp(@PathVariable int id,Model m) {
+		
+		Employee emp = service.getEMpById(id);
+		service.deleteEMp(id, emp);
 		m.addAttribute("msg", "Emp Data Delete Sucessfully..");
 		return "redirect:/page";
 	}
@@ -93,12 +91,6 @@ public class EmpController {
 		{
 		List<Employee> employeeList=service.getAllEmp();
 		m.addAttribute("emp",employeeList);
-		/*
-		 * Page<Employee> emplist = service.getEMpByPaginate(pageno, 2);
-		 * m.addAttribute("emp", emplist); m.addAttribute("currentPage", pageno);
-		 * m.addAttribute("totalPages", emplist.getTotalPages());
-		 * m.addAttribute("totalItem", emplist.getTotalElements());
-		 */
 		return "index";
 		}
 		{
@@ -116,10 +108,7 @@ public class EmpController {
 		return "signup";
 	}
 	@PostMapping("/signup")
-	public String signup(@ModelAttribute User user){//@RequestParam String username,@RequestParam String password) {
-		//User user=new User(username,password);
-		//user.setUsername(username);
-		//user.setPassword(passwordEncoder.encode(password));
+	public String signup(@ModelAttribute User user){
 		userRepository.save(user);
 		return "login";
 		
@@ -132,7 +121,6 @@ public class EmpController {
 	
 	@PostMapping("/index")
 	public String login(@RequestParam String username, @RequestParam String password) {
-		//System.out.println(username+" "+password);
 		User u=userRepository.findByUsername(username);
 		if(u!=null) {
 			

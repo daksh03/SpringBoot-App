@@ -40,7 +40,9 @@ public class EmpService {
 		return null;
 	}
 
-	public void deleteEMp(int id) {
+	public void deleteEMp(int id, Employee emp) {
+		
+		emailUtils.sendEmail(emp.getEmail(),"Your Record is Deleted","Record Removal");
 		repo.deleteById(id);
 	}
 
