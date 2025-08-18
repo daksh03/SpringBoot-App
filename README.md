@@ -223,3 +223,5 @@ Using `@Autowired` lets you delegate wiring to the framework, while direct insta
 | Typical Use Case             | Very simple emails without logic         | Emails needing loops or conditional blocks              | Rich HTML emails with fragments, inline images, styles      |
 
 Will Implement EMail Service while editing employeed details
+
+Will add .html for email
